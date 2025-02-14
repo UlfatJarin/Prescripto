@@ -5,6 +5,13 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    fontFamily: {
+      'Poppins': ['Poppins', 'sans-serif'],
+      // font-family: "Poppins", sans-serif;
+      'Outfit': ['Outfit', 'serif'],
+      // font-family: "Outfit", serif;
+
+    },
     extend: {
       colors: {
         'primary': '#5F6FFF',
