@@ -6,7 +6,7 @@ import Container from './layers/Container'
 const Banner = () => {
     return (
       <Container>
-          <div className='bg-primary rounded-xl mt-6 flex justify-between relative'>
+          <div className='bg-primary rounded-xl mt-6 flex justify-between flex-col md:flex-row relative '>
             <div className='mt-[190px] ml-[93px] pb-[158px] '>
                 <h1 className='font-Outfit font-semibold text-[63px] leading-[80px] text-whitec '>Book Appointment <br />With Trusted Doctors</h1>
                 <div className='flex gap-3.5 my-10'>
