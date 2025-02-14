@@ -1,9 +1,10 @@
 import React from 'react'
 
-const Button = ({btntext,classname ,onClick}) => {
+const Button = ({btntext,classname ,onClick ,children}) => {
   return (    
-        <button onClick={onClick}  className={`bg-primary py-3 px-9 font-Outfit font-normal text-lg text-whitec rounded-full  ${classname}`}>
+        <button onClick={onClick}  className={`bg-primary py-3 px-9 font-Outfit font-normal text-lg text-whitec rounded-full flex gap-3  ${classname}`}>
             {btntext}
+            {children}
 
         </button>
   )
