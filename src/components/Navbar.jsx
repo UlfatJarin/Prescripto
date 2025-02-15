@@ -37,7 +37,7 @@ const Navbar = () => {
                 <div className='flex items-center gap-4 cursor-pointer group relative'>
                     <img className='w-12 rounded-full' src={assets.profile_pic} alt="" />
                     <img className='w-3' src={assets.dropdown_icon} alt="" />
-                    <div className='absolute right-0 top-0 pt-20   hidden group-hover:block'>
+                    <div className='absolute right-0 top-0 pt-20  hidden group-hover:block'>
                         <div className='min-w-[218px] bg-[#F8F8F8] p-4 text-text2 text-lg font-Outfit font-medium flex flex-col gap-3 rounded  ' >
                             <p onClick={()=>navigate('my-profile')} className='hover:text-text1 cursor-pointer'>My Profile</p>
                             <p onClick={()=>navigate('my-appointments')} className='hover:text-text1 cursor-pointer'>My Appointments</p>
