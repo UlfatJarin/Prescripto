@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { AppContext } from '../contexts/AppContext'
 import { doctors } from '../assets/assets'
 
@@ -7,6 +7,7 @@ const Doctors = () => {
 
   const {speciality} =useParams()
   const [filterDoc,setFilterDoc] = useState([])
+  const navigate = useNavigate()
 
   const {doctors} =useContext(AppContext)  
 
@@ -25,19 +26,17 @@ useEffect(()=>{
 
   return (
     <div>
-      <p>Browse through the doctors specialist.</p>
-      <div>
-        <div>
-          <ul>
-            <li>General physician</li>
-            <li>Gynecologist</li>
-            <li>Dermatologist</li>
-            <li>Pediatricians</li>
-            <li>Neurologist</li>
-            <li>Gastroenterologist</li>
+      <p className='font-Outfit text-xl text-text2 leading-7 mt-14 mb-9'>Browse through the doctors specialist.</p>
+      <div className='grid md:grid-cols-4 lg:grid-cols-5 gap-6'>
+          <ul className='font-Outfit text-text2 flex flex-col gap-3.5'>
+            <li className='py-3.5 px-5 border border-[#BDBDBD] rounded-lg'>General physician</li>
+            <li className='py-3.5 px-5 border border-[#BDBDBD] rounded-lg'>Gynecologist</li>
+            <li className='py-3.5 px-5 border border-[#BDBDBD] rounded-lg'>Dermatologist</li>
+            <li className='py-3.5 px-5 border border-[#BDBDBD] rounded-lg'>Pediatricians</li>
+            <li className='py-3.5 px-5 border border-[#BDBDBD] rounded-lg'>Neurologist</li>
+            <li className='py-3.5 px-5 border border-[#BDBDBD] rounded-lg'>Gastroenterologist</li>
           </ul>
-        </div>
-        <div className='grid grid-cols-4'>
+        <div className='md:col-span-3   lg:col-span-4 grid  md:grid-cols-3 lg:grid-cols-4 gap-6 mx-auto'>
           {
             filterDoc.map((item,index)=>(
               <div onClick={()=>navigate('/appointment/${item._id')} className='border border-[#C9D8FF] rounded-xl overflow-hidden cursor-pointer hover:-translate-y-2.5 transition-all duration-500'>
