@@ -1,12 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { assets } from '../assets/assets'
+import { useNavigate } from 'react-router-dom'
 
 const Footer = () => {
+
+    const navigate = useNavigate()
+
     return (
         <div className='mt-16'>
-            <div className='grid grid-cols-4 py-16'>
+            <div className='grid grid-cols-4 py-16 gap-5'>
                 <div className='col-span-2'>
-                    <img src={assets.logo} alt="" />
+                    <img onClick={()=>navigate('/')} className='max-w-[217px]' src={assets.logo} alt="" />
                     <p className='max-w-[646px] font-Outfit text-lg leading-7 text-text2 mt-10'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
 
                 </div>
