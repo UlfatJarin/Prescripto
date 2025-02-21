@@ -29,12 +29,12 @@ useEffect(()=>{
       <p className='font-Outfit text-xl text-text2 leading-7 mt-14 mb-9'>Browse through the doctors specialist.</p>
       <div className='grid md:grid-cols-4 lg:grid-cols-5 gap-6'>
           <ul className='font-Outfit text-text2 flex flex-col gap-3.5'>
-            <li className='py-3.5 px-5 border border-[#BDBDBD] rounded-lg'>General physician</li>
-            <li className='py-3.5 px-5 border border-[#BDBDBD] rounded-lg'>Gynecologist</li>
-            <li className='py-3.5 px-5 border border-[#BDBDBD] rounded-lg'>Dermatologist</li>
-            <li className='py-3.5 px-5 border border-[#BDBDBD] rounded-lg'>Pediatricians</li>
-            <li className='py-3.5 px-5 border border-[#BDBDBD] rounded-lg'>Neurologist</li>
-            <li className='py-3.5 px-5 border border-[#BDBDBD] rounded-lg'>Gastroenterologist</li>
+            <li onClick={()=>speciality === 'General physician' ? navigate('/doctors') : navigate('/doctors/General physician')} className={`py-3.5 px-5 border border-[#BDBDBD] rounded-lg transition-all cursor-pointer ${speciality === "General physician" ? "bg-[#E2E5FF] text-text1" : "" }`}>General physician</li>
+            <li onClick={()=>speciality === 'Gynecologist' ? navigate('/doctors') : navigate('/doctors/Gynecologist')} className={`py-3.5 px-5 border border-[#BDBDBD] rounded-lg transition-all cursor-pointer ${speciality === "Gynecologist" ? "bg-[#E2E5FF] text-text1" : "" }`}>Gynecologist</li>
+            <li onClick={()=>speciality === 'Dermatologist' ? navigate('/doctors') : navigate('/doctors/Dermatologist')} className={`py-3.5 px-5 border border-[#BDBDBD] rounded-lg transition-all cursor-pointer ${speciality === "Dermatologist" ? "bg-[#E2E5FF] text-text1" : "" }`}>Dermatologist</li>
+            <li onClick={()=>speciality === 'Pediatricians' ? navigate('/doctors') : navigate('/doctors/Pediatricians')} className={`py-3.5 px-5 border border-[#BDBDBD] rounded-lg transition-all cursor-pointer ${speciality === "Pediatricians" ? "bg-[#E2E5FF] text-text1" : "" }`}>Pediatricians</li>
+            <li onClick={()=>speciality === 'Neurologist' ? navigate('/doctors') : navigate('/doctors/Neurologist')} className={`py-3.5 px-5 border border-[#BDBDBD] rounded-lg transition-all cursor-pointer ${speciality === "Neurologist" ? "bg-[#E2E5FF] text-text1" : "" }`}>Neurologist</li>
+            <li onClick={()=>speciality === 'Gastroenterologist' ? navigate('/doctors') : navigate('/doctors/Gastroenterologist')} className={`py-3.5 px-5 border border-[#BDBDBD] rounded-lg transition-all cursor-pointer ${speciality === "Gastroenterologist" ? "bg-[#E2E5FF] text-text1" : "" }`}>Gastroenterologist</li>
           </ul>
         <div className='md:col-span-3   lg:col-span-4 grid  md:grid-cols-3 lg:grid-cols-4 gap-6 mx-auto'>
           {
