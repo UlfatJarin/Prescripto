@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Title from './layers/Title'
 import { doctors } from '../assets/assets'
 import { useNavigate } from 'react-router-dom'
@@ -8,14 +8,14 @@ import { AppContext } from '../contexts/AppContext'
 const TopDoctors = () => {
 
   const navigate = useNavigate()
-  // const {doctors} = useContext(AppContext)
+  const {doctors} = useContext(AppContext)
 
   return (
     <div>
         <Title title='Top Doctors to Book' text='Simply browse through our extensive list of trusted doctors.'/>
         <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-y-6 gap-4 pt-10 '>
           {doctors.slice(0,10).map((item,index)=>(
-            <div onClick={()=>navigate('/appointment/${item._id')} className='border border-[#C9D8FF] rounded-xl overflow-hidden cursor-pointer hover:-translate-y-2.5 transition-all duration-500'>
+            <div onClick={()=>navigate(`/appointment/${item._id}`)} className='border border-[#C9D8FF] rounded-xl overflow-hidden cursor-pointer hover:-translate-y-2.5 transition-all duration-500'>
               <img className='bg-[#EAEFFF] ' src={item.image} alt="" />
             <div  className='p-3.5 pb-5 '>
               <div className='flex items-center gap-1.5'>
