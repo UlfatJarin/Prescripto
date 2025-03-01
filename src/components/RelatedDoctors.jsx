@@ -1,20 +1,29 @@
-import React, { useContext } from 'react'
-import Title from './layers/Title'
-import { doctors } from '../assets/assets'
-import { useNavigate } from 'react-router-dom'
-import Button from './layers/Button'
+import React, { useContext, useEffect, useState } from 'react'
 import { AppContext } from '../contexts/AppContext'
+import { useNavigate } from 'react-router-dom'
+import Title from './layers/Title'
+import Button from './layers/Button'
 
-const TopDoctors = () => {
+const RelatedDoctors = ({docId ,speciality}) => {
 
-  const navigate = useNavigate()
-  const {doctors} = useContext(AppContext)
+    const {doctors} =useContext(AppContext)
+    const navigate = useNavigate()
+
+    const [relDoc ,setRelDocs] =useState([])
+
+    useEffect(()=>{
+        if (doctors.length > 0 && speciality){
+            const doctorsData = doctors.filter(doc=>doc.speciality === speciality && doc._id !== docId);
+            setRelDocs(doctorsData);
+        }
+
+    },[doctors,speciality,docId])
 
   return (
     <div>
-        <Title title='Top Doctors to Book' text='Simply browse through our extensive list of trusted doctors.'/>
-        <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-y-6 gap-4 pt-10 '>
-          {doctors.slice(0,10).map((item,index)=>(
+        <Title title='Related Doctors' text='Simply browse through our extensive list of trusted doctors.'/>
+        <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-y-6 gap-4 pt-10 mb-10'>
+          {relDoc.slice(0,5).map((item,index)=>(
             <div onClick={()=>{navigate(`/appointment/${item._id}`); scrollTo(0,0)}} className='border border-[#C9D8FF] rounded-xl overflow-hidden cursor-pointer hover:-translate-y-2.5 transition-all duration-500'>
               <img className='bg-[#EAEFFF] ' src={item.image} alt="" />
             <div  className='p-3.5 pb-5 '>
@@ -34,4 +43,4 @@ const TopDoctors = () => {
   )
 }
 
-export default TopDoctors
+export default RelatedDoctors

@@ -2,6 +2,9 @@ import React, { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { AppContext } from '../contexts/AppContext';
 import { assets } from '../assets/assets';
+import Button from '../components/layers/Button';
+import RelatedDoctors from '../components/RelatedDoctors';
+
 
 
 const Appointment = () => {
@@ -135,9 +138,13 @@ const Appointment = () => {
               {item.time.toLowerCase()}
             </p>
           ))}
-
         </div>
+          <Button classname='!px-[108px] mt-12' btntext='Book an appointment'/>
       </div>
+      {/* Listing Related Doctors */}
+     <div className='mt-[184px]'>
+     <RelatedDoctors docId={docId} speciality={docInfo.speciality}/>
+     </div>
     </div>
   )
 }
