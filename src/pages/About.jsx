@@ -4,7 +4,9 @@ import {assets} from '../assets/assets'
 const About = () => {
   return (
     <div>
-      <h4 className='font-normal text-2xl text-text2 mb-7'>ABOUT <span className='text-text2 font-semibold'> US</span></h4>
+      <div className='flex justify-center mt-16'>
+      <h4 className='font-normal text-2xl text-text2 mb-16'>ABOUT <span className='text-text2 font-semibold'> US</span></h4>
+      </div>
       <div className='flex gap-16 mb-20'>
         <img className='max-w-[438px] ' src={assets.about_image} alt="" />
         <div className='flex flex-col gap-8 max-w-[894px] font-Outfit '>
