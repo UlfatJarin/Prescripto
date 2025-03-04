@@ -19,6 +19,7 @@ export default {
         'blackc': '#000000',
         'text1': '#1F2937',
         'text2': '#4B5563',
+        'text3': '#6B7280',
       },
     },
   },
