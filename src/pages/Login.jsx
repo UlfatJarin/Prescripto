@@ -16,7 +16,7 @@ const Login = () => {
   }
 
   return (
-    <form className='min-h-[80vh] flex items-center justify-center ' action="">
+    <form className='md:min-h-[80vh] flex items-center justify-center py-12 md:py-0 ' action="">
       <div className='w-[476px] py-12 px-[46px] rounded-[20px] border border-[#D4D4D4] '>
         <h2 className='font-semibold text-[26px] text-text2 mb-2'>{state === 'Sign Up' ? "Create Account" : "Login"}</h2>
         <p className=' text-lg text-text2'>Please {state === 'Sign Up' ? "Sign Up" : "Log in"} to book appointment</p>
