@@ -11,7 +11,7 @@ const MyAppointment = () => {
       <h5 className='font-medium text-text2 text-2xl mt-28 py-6 border-b'>My Appointments </h5>
       <div className=''>
         {doctors.slice(0,3).map((item, index) => (
-          <div className='grid grid-cols-[1fr_2fr] gap-4 sm:flex sm:gap-6 py-4 border-b' key={index}>
+          <div className='md:grid md:grid-cols-[1fr_2fr] flex flex-col gap-4 sm:flex sm:gap-6 py-4 border-b' key={index}>
             <div>           
                <img className='max-w-[160px] rounded-sm bg-[#EAEFFF]' src={item.image} alt="" />
             </div>
